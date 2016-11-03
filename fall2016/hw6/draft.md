@@ -64,7 +64,7 @@ def bacon_movies(api_key, actor):
     only include movies- not TV shows or shorts. 
     
     Parameters:
-    API_KEY: str -- your personal API Key found on your account page
+    api_key: str -- your personal API Key found on your account page
     actor: str -- the name of the actor whos movies you wish to search
 
     Return:
