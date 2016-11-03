@@ -25,10 +25,7 @@ Today, within the span of a few hours, and with the power of Python, the Interne
 
 The first stop on this magical journey is to the cybersource of all things movies: the [Internet Movie Database](http://www.imdb.com/), affectionately known as the IMDb. A quick websearch with turn up the webpage entry for Mr. Bacon; but just looking in awe at his filmography is not nearly enough for the task.
 
-We'll need to write a Python function to scrape out all the movies and their names and URLs.
-
-# KATIE! FOR PETE'S SAKE WRITE STUFF HERE!
-
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies and their names and URLs.
 
 #### Sub-task 1.5: The Key to Finding More Bacon
 
@@ -53,6 +50,27 @@ Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere;
 ##### themoviedb.org API Documentation
 
 Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably, too much. Bookmark this webpage anyway. You'll need that for later, too.
+
+
+##### Pulling it all together
+
+```python
+def bacon_movies(API_KEY):
+    """Use your personal API key and the Beautiful Soup module to extract the text and urls' from Kevin Bacon's themoviedb.org webpage.     Return a dictionary of all of Kevin Bacon's movies taken from themoviedb.org. The keys will be the movie titles, and the values         will be the corresponding urls (in string form) to that movie. Be sure to only include movies- not TV shows or shorts. 
+    
+    Parameters:
+    api_key: int -- your personal API Key found on your account page from the #####Ge
+
+    Return:
+    actor_name: dict -- BeautifulSoup object
+    
+    Usage Examples:
+    >>> bacon_movies(4724)
+    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 'Mystic River':'http://www.imdb.com/title/tt0327056/?               ref_=nm_knf_t3', 'Footloose':'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    """
+```
+A handy resource for learning about Beautiful Soup [https://www.crummy.com/software/BeautifulSoup/bs4/doc/].
+If your bs4 module does not run, refer to Simpkin's Homework 0 instructions to install Beautiful Soup.
 
 ### Task 2: In The Name of Bacon
 
