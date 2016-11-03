@@ -45,6 +45,8 @@ First, get an account from [themoviedb.org](https://www.themoviedb.org/). You ca
 
 Second, sign in and go to your account page. In the left column under your username, there is a link to the API section of your account.
 
+You will then need to generate a new API Key under the -Request an API Key- header. The "click here" button should take you to a page where you'll need to click "Developer". At the very bottom of the next page, click "Accept". You will need to fill out the Request an -API Key- application and hit "Submit".
+
 Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere; you'll need that for later. ***Don't share this key with anyone. No really, don't share it.***
 
 ##### themoviedb.org API Documentation
