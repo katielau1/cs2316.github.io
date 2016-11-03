@@ -55,16 +55,17 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 ##### Pulling it all together
 
 ```python
-def bacon_movies(API_KEY):
+def bacon_movies(api_key, actor):
     """Use the string of letters/numbers that is your API key and the 
-    Beautiful Soup module to extract the text and urls' from Kevin Bacon's 
-    themoviedb.org webpage. Return a dictionary of all of Kevin Bacon's 
+    Beautiful Soup module to extract the text and urls' from an actor's 
+    themoviedb.org webpage. Return a dictionary of all of the extracted 
     movies. The keys will be the movie titles, and the values will be 
     the corresponding urls (in string form) to that movie. Be sure to 
     only include movies- not TV shows or shorts. 
     
     Parameters:
     API_KEY: str -- your personal API Key found on your account page
+    actor: str -- the name of the actor whos movies you wish to search
 
     Return:
     movie_dict: dict --
@@ -73,7 +74,7 @@ def bacon_movies(API_KEY):
              and movie_url: str -- the url address for that movie's page
     
     Usage Examples:
-    >>> bacon_movies('RXAaSyAIc4ZoB4D')
+    >>> bacon_movies('RXAaSyAIc4ZoB4D', 'Kevin Bacon')
     {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
     'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
     'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
