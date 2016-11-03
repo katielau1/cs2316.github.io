@@ -79,8 +79,10 @@ def bacon_movies(API_KEY):
     'Footloose':'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
     """
 ```
-A handy resource for learning about Beautiful Soup [https://www.crummy.com/software/BeautifulSoup/bs4/doc/].
-If your bs4 module does not run, refer to Simpkin's Homework 0 instructions to install Beautiful Soup.
+A handy resource for learning about Beautiful Soup:
+[https://www.crummy.com/software/BeautifulSoup/bs4/doc/]
+
+If your bs4 module does not run, refer to Simpkin's Homework 0 instructions for installing Beautiful Soup.
 
 ### Task 2: In The Name of Bacon
 
