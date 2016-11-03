@@ -55,7 +55,7 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 ##### Pulling it all together
 
 ```python
-def bacon_movies(api_key, actor):
+def all_movies(api_key, actor):
     """Use the string of letters/numbers that is your API key and the 
     Beautiful Soup module to extract the text and urls' from an actor's 
     themoviedb.org webpage. Return a dictionary of all of the extracted 
