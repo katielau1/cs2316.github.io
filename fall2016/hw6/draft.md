@@ -25,11 +25,11 @@ Today, within the span of a few hours, and with the power of Python, the Interne
 
 The first stop on this magical journey is to the cybersource of all things movies: the [Internet Movie Database](http://www.imdb.com/), affectionately known as the IMDb. A quick websearch with turn up the webpage entry for Mr. Bacon; but just looking in awe at his filmography is not nearly enough for the task.
 
-We'll need to write a Python function to scrape out all of Kevin Bacon's movies and their names and URLs.
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs.
 
 #### Sub-task 1.5: The Key to Finding More Bacon
 
-Scraping is no fun. Way too many items to inspect. One could iterate through all those movies and find who acts in them, but why bother? It's going to take forever to look at every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
+Scraping is no fun. Way too many items to inspect. One could loop through all those movies and find who acts in them, but why bother? It's going to take forever to look at every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
 
 While IMDb doesn't have an API available, [themoviedb.org](https://www.themoviedb.org/) does. And like any worthwhile API, it's totally free.
 
@@ -56,27 +56,27 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 
 ```python
 def bacon_movies(API_KEY):
-    """Use your personal API key and the Beautiful Soup module to extract
-    the text and urls' from Kevin Bacon's themoviedb.org webpage. Return 
-    a dictionary of all of Kevin Bacon's movies taken from themoviedb.org.
-    The keys will be the movie titles, and the values will be the 
-    corresponding urls (in string form) to that movie. Be sure to only include
-    movies- not TV shows or shorts. 
+    """Use the string of letters/numbers that is your API key and the 
+    Beautiful Soup module to extract the text and urls' from Kevin Bacon's 
+    themoviedb.org webpage. Return a dictionary of all of Kevin Bacon's 
+    movies. The keys will be the movie titles, and the values will be 
+    the corresponding urls (in string form) to that movie. Be sure to 
+    only include movies- not TV shows or shorts. 
     
     Parameters:
-    api_key: int -- your personal API Key found on your account page
+    API_KEY: str -- your personal API Key found on your account page
 
     Return:
-    actor_name: dict --
-        where movie_dict ={movie_name: movie_url, movie_name: movie_url}
-           movie_name: str -- the name of a Kevin Bacon movie
-           movie_url: str -- the url address for 
+    movie_dict: dict --
+         where movie_dict ={movie_name: movie_url, movie_name: movie_url}
+             and movie_name: str -- the name of a Kevin Bacon movie
+             and movie_url: str -- the url address for that movie's page
     
     Usage Examples:
-    >>> bacon_movies(4724)
+    >>> bacon_movies('RXAaSyAIc4ZoB4D')
     {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
-    'Mystic River':'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
-    'Footloose':'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
+    'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
     """
 ```
 A handy resource for learning about Beautiful Soup:
