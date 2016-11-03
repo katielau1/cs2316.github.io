@@ -56,17 +56,27 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 
 ```python
 def bacon_movies(API_KEY):
-    """Use your personal API key and the Beautiful Soup module to extract the text and urls' from Kevin Bacon's themoviedb.org webpage.     Return a dictionary of all of Kevin Bacon's movies taken from themoviedb.org. The keys will be the movie titles, and the values         will be the corresponding urls (in string form) to that movie. Be sure to only include movies- not TV shows or shorts. 
+    """Use your personal API key and the Beautiful Soup module to extract
+    the text and urls' from Kevin Bacon's themoviedb.org webpage. Return 
+    a dictionary of all of Kevin Bacon's movies taken from themoviedb.org.
+    The keys will be the movie titles, and the values will be the 
+    corresponding urls (in string form) to that movie. Be sure to only include
+    movies- not TV shows or shorts. 
     
     Parameters:
-    api_key: int -- your personal API Key found on your account page from the #####Ge
+    api_key: int -- your personal API Key found on your account page
 
     Return:
-    actor_name: dict -- BeautifulSoup object
+    actor_name: dict --
+        where movie_dict ={movie_name: movie_url, movie_name: movie_url}
+           movie_name: str -- the name of a Kevin Bacon movie
+           movie_url: str -- the url address for 
     
     Usage Examples:
     >>> bacon_movies(4724)
-    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 'Mystic River':'http://www.imdb.com/title/tt0327056/?               ref_=nm_knf_t3', 'Footloose':'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
+    'Mystic River':'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
+    'Footloose':'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
     """
 ```
 A handy resource for learning about Beautiful Soup [https://www.crummy.com/software/BeautifulSoup/bs4/doc/].
