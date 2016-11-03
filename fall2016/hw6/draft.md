@@ -68,13 +68,13 @@ def all_movies(api_key, actor):
     actor: str -- the name of the actor whos movies you wish to search
 
     Return:
-    movie_dict: dict --
-         where movie_dict ={movie_name: movie_url, movie_name: movie_url}
+    movie_making: dict --
+         where movie_making = {movie_name: movie_url, movie_name: movie_url}
              and movie_name: str -- the name of a Kevin Bacon movie
              and movie_url: str -- the url address for that movie's page
     
     Usage Examples:
-    >>> bacon_movies('RXAaSyAIc4ZoB4D', 'Kevin Bacon')
+    >>> all_movies('RXAaSyAIc4ZoB4D', 'Kevin Bacon')
     {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
     'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
     'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
