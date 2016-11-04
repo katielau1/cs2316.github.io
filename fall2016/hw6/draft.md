@@ -19,15 +19,53 @@ This game was henceforth known as Six Degrees from Kevin Bacon...
 
 Today, within the span of a few hours, and with the power of Python, the Internets, and our new friend the API, any decent programmer can write a program to start to unravel the mystery that once was: Kevin Bacon.
 
-## Solution Description
 
 ### Task 1: Scraping for Bacon
 
-The first stop on this magical journey is to the cybersource of all things movies: the [Internet Movie Database](http://www.imdb.com/), affectionately known as the IMDb. A quick websearch with turn up the webpage entry for Mr. Bacon; but just looking in awe at his filmography is not nearly enough for the task.
+You will need to extract information from [Internet Movie Database](http://www.imdb.com/), also known as the IMDb. A quick websearch with turn up the webpage entry for Mr. Bacon.
 
-We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs.
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the Requests module to obtain a webpage's code in HTML. Then, use the Beautiful Soup module to parse and extract the necessary data.
 
-#### Sub-task 1.5: The Key to Finding More Bacon
+```python
+def all_movies(url):
+    """Use the Requests and Beautiful Soup module to extract the text and urls' from
+    an actor's themoviedb.org webpage. Return a dictionary of all of the 
+    extracted movies. The keys will be the movie titles, and the values 
+    will be the corresponding urls (in string form) to that movie. Be 
+    sure to only include movies- not TV shows or shorts. 
+    
+    Parameters:
+    url: str -- the url for the imdb page of your chosen actor
+
+    Return:
+    all_movies: dict --
+         where movie_making = {movie_name: movie_url, movie_name: movie_url}
+             and movie_name: str -- the name of a Kevin Bacon movie
+             and movie_url: str -- the url address for that movie's page
+    
+    Usage Examples:
+    >>> all_movies('http://www.imdb.com/name/nm0000102/')
+    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
+    'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
+    'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    """
+```
+Resource for learning about Beautiful Soup:
+[https://www.crummy.com/software/BeautifulSoup/bs4/doc/]
+
+If your bs4 module does not run, refer to Simpkin's Homework 0 instructions for installing Beautiful Soup.
+
+Resource for learning about Requests:
+[http://docs.python-requests.org/en/master/user/quickstart/#make-a-request]
+
+### Task 2: In The Name of Bacon
+
+Since we're at the [themoviedb.org](https://www.themoviedb.org/) we might as well bring up Kevin's page:  
+https://www.themoviedb.org/person/4724-kevin-bacon
+
+See that fancy **4724** in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
+
+#### Sub-task 2.5: The Key to Finding More Bacon
 
 Scraping is no fun. Way too many items to inspect. One could loop through all those movies and find who acts in them, but why bother? It's going to take forever to look at every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
 
@@ -49,52 +87,7 @@ You will then need to generate a new API Key under the -Request an API Key- head
 
 Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere; you'll need that for later. ***Don't share this key with anyone. No really, don't share it.***
 
-##### themoviedb.org API Documentation
-
-Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably, too much. Bookmark this webpage anyway. You'll need that for later, too.
-
-
-##### Pulling it all together
-
-```python
-def all_movies(api_key, actor):
-    """Use the string of letters/numbers that is your API key and the 
-    Beautiful Soup module to extract the text and urls' from an actor's 
-    themoviedb.org webpage. Return a dictionary of all of the extracted 
-    movies. The keys will be the movie titles, and the values will be 
-    the corresponding urls (in string form) to that movie. Be sure to 
-    only include movies- not TV shows or shorts. 
-    
-    Parameters:
-    api_key: str -- your personal API Key found on your account page
-    actor: str -- the name of the actor whos movies you wish to search
-
-    Return:
-    movie_making: dict --
-         where movie_making = {movie_name: movie_url, movie_name: movie_url}
-             and movie_name: str -- the name of a Kevin Bacon movie
-             and movie_url: str -- the url address for that movie's page
-    
-    Usage Examples:
-    >>> all_movies('RXAaSyAIc4ZoB4D', 'Kevin Bacon')
-    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
-    'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
-    'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
-    """
-```
-A handy resource for learning about Beautiful Soup:
-[https://www.crummy.com/software/BeautifulSoup/bs4/doc/]
-
-If your bs4 module does not run, refer to Simpkin's Homework 0 instructions for installing Beautiful Soup.
-
-### Task 2: In The Name of Bacon
-
-Since we're at the [themoviedb.org](https://www.themoviedb.org/) we might as well bring up Kevin's page:  
-https://www.themoviedb.org/person/4724-kevin-bacon
-
-See that fancy **4724** in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
-
-Before you do that, it might help to do the following for more insight:
+It might help to do the following for more insight:
 
 1. Stare at the following page for a bit; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
 2. After you're done staring, click the `Try it out` tab.
