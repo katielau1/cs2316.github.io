@@ -50,13 +50,11 @@ def all_movies(url):
     'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
     """
 ```
-Resource for learning about Beautiful Soup:
-[https://www.crummy.com/software/BeautifulSoup/bs4/doc/]
+Learn more about [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 If your bs4 module does not run, refer to Simpkin's Homework 0 instructions for installing Beautiful Soup.
 
-Resource for learning about Requests:
-[http://docs.python-requests.org/en/master/user/quickstart/#make-a-request]
+Learn more about [Requests](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request)
 
 ### Task 2: In The Name of Bacon
 
